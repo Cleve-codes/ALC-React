@@ -23,7 +23,7 @@ function App() {
 export default App;
 
 function ListItems({ num, addNum }) {
-  const increment = 3;
+  const increment = 1;
   return (
     <>
       <button onClick={() => addNum(increment)}>Add Item</button>
