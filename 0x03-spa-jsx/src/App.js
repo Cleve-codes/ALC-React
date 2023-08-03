@@ -6,8 +6,8 @@ import { useState } from "react";
 function App() {
   const [num, setNum] = useState([1, 2, 3]);
 
-  const addNum = () => {
-    const newNum = Math.max(...num) + 1;
+  const addNum = (incrementValue) => {
+    const newNum = Math.max(...num) + incrementValue;
     setNum([...num, newNum]);
   };
 
@@ -23,9 +23,10 @@ function App() {
 export default App;
 
 function ListItems({ num, addNum }) {
+  const increment = 3;
   return (
     <>
-      <button onClick={addNum}>Add Item</button>
+      <button onClick={() => addNum(increment)}>Add Item</button>
       {num.map((int) => (
         <li key={int}>{int}</li>
       ))}
