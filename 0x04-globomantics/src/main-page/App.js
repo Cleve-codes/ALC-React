@@ -2,6 +2,7 @@ import { useEffect, useState, useMemo } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./Header";
 import HouseFilter from "./house-filter";
+import HouseFromQuery from "../House/HouseFromQuery";
 import FeaturedHouse from "./featured-house";
 import SearchResults from "../search-results/SearchResults";
 
@@ -34,6 +35,12 @@ function App() {
             path="/searchresults/:country"
             element={<SearchResults allHouses={allHouses} />}
           ></Route>
+          <Route
+          path="/house/:house"
+          element={<HouseFromQuery allHouses={allHouses} />}
+          >
+
+          </Route>
           <Route
             path="/"
             element={<FeaturedHouse house={featuredHouse} />}
