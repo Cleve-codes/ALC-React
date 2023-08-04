@@ -1,7 +1,7 @@
-import React from 'react'
-import './house.css'
+import React from "react";
+import "./house.css";
 
-const House = ({house}) => {
+const House = ({ house }) => {
   return (
     <div>
       <div className="row mt-2">
@@ -15,12 +15,12 @@ const House = ({house}) => {
           <img src={`/images/${house.photo}.jpeg`} alt="house" />
         </div>
         <div className="col-md-5">
-          <p className='price'>{house.price}</p>
+          <p className="price">$ {house.price}</p>
           <p>{house.description}</p>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default House
+export default House;
