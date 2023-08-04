@@ -10,7 +10,7 @@ const House = ({ house }) => {
       <div className="row">
         <h5 className="col-md-12">{house.address}</h5>
       </div>
-      <div>
+      <div className="row">
         <div className="col-md-7">
           <img src={`/images/${house.photo}.jpeg`} alt="house" />
         </div>
