@@ -12,7 +12,7 @@ const history = useHistory();
 
 const onSearchCountry =(e)=>{
     const country = e.target.value;
-    history.push(`/searchResults/${country}`)
+    history.push(`/searchresults/${country}`)
 }
 
   return (
