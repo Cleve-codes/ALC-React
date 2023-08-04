@@ -1,19 +1,18 @@
 import React from "react";
-import useHistory from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 const HouseFilter = ({ allHouses }) => {
-const history = useHistory();
+  const navigate = useNavigate();
 
   const countries = allHouses
     ? Array.from(new Set(allHouses.map((house) => house.country)))
     : [];
   countries.unshift(null);
 
-const onSearchCountry =(e)=>{
+  const onSearchCountry = (e) => {
     const country = e.target.value;
-    history.push(`/searchresults/${country}`)
-}
+    navigate(`/searchresults/${country}`);
+  };
 
   return (
     <div className="row mt-3">
