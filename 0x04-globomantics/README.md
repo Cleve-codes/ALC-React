@@ -76,4 +76,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 3. usEffect hook
 4. useNavigate
 5. useRef
+6. useContext
  

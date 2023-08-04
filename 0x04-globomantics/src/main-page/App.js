@@ -32,7 +32,7 @@ function App() {
         <HouseFilter allHouses={allHouses} />
         <Routes>
           <Route
-            path="/searchresults/:country"
+            path="/SearchResults/:country"
             element={<SearchResults allHouses={allHouses} />}
           ></Route>
           <Route
