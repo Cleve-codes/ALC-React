@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./Header";
 
 function App() {
@@ -7,24 +8,25 @@ function App() {
   useEffect(() => {
     const fetchHouses = async () => {
       const response = await fetch("./houses.json");
-      const houses = response.json();
+      const houses = await response.json();
       setAllHouses(houses);
     };
     fetchHouses();
   }, []);
 
-  const featuredHouse = useMemo(()=>{
-     if (allHouses.length) {
-       const randomHouse = Math.floor(Math.random() * allHouses.length);
-       return allHouses[randomHouse];
-     }
-  }, [allHouses])
- 
+  const featuredHouse = useMemo(() => {
+    if (allHouses.length) {
+      const randomHouse = Math.floor(Math.random() * allHouses.length);
+      return allHouses[randomHouse];
+    }
+  }, [allHouses]);
 
   return (
-    <div className="container">
-      <Header />
-    </div>
+    <Router>
+      <div className="container">
+        <Header />
+      </div>
+    </Router>
   );
 }
 
