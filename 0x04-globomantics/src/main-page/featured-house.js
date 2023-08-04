@@ -1,7 +1,7 @@
 import React from 'react'
 import House from '../House/House';
 
-const featuredHouse = ({house}) => {
+const FeaturedHouse = ({house}) => {
 if(house){
     
     return (
@@ -15,4 +15,4 @@ if(house){
     }
 }
     
-export default featuredHouse;
+export default FeaturedHouse;
