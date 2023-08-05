@@ -2,8 +2,7 @@ import React from 'react'
 import House from '../House/House';
 
 const FeaturedHouse = ({house}) => {
-if(house){
-    
+if(house){ 
     return (
       <div>
         <div className="row featuredHouse">
