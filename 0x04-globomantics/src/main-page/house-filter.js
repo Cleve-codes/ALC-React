@@ -11,7 +11,7 @@ const HouseFilter = ({ allHouses }) => {
 
   const onSearchCountry = (e) => {
     const country = e.target.value;
-    navigate(`/SearchResults/${country}`);
+    navigate(`/searchresults/${country}`);
   };
 
   return (

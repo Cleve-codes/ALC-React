@@ -17,6 +17,7 @@ function App() {
           throw new Error("Network response was not ok");
         }
         const houses = await response.json();
+        console.log(houses);
         setAllHouses(houses);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -25,6 +26,8 @@ function App() {
     };
     fetchHouses();
   }, []);
+
+ // console.log(allHouses);
 
   const featuredHouse = useMemo(() => {
     if (allHouses.length) {
