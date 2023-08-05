@@ -12,3 +12,7 @@ const render = () => {
 };
 
 setInterval(render, 1000);
+
+
+
+// Same implementation using React

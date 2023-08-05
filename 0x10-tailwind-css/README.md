@@ -68,16 +68,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-### Topics Leanrt
-
-- React Hooks i.e
-
-1. useState Hook
-2. useState hook
-3. usEffect hook
-4. useNavigate
-5. useRef
-6. useContext
-
-- React router
