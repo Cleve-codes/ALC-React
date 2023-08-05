@@ -17,7 +17,7 @@ function App() {
           throw new Error("Network response was not ok");
         }
         const houses = await response.json();
-        console.log(houses);
+       // console.log(houses);
         setAllHouses(houses);
       } catch (error) {
         console.error("Error fetching data:", error);
