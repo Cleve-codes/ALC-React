@@ -72,12 +72,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### Topics Leanrt
 
 - React Hooks i.e
-
-1. useState Hook
-2. useState hook
-3. usEffect hook
-4. useNavigate
-5. useRef
-6. useContext
-
-- React router
+- React router.
