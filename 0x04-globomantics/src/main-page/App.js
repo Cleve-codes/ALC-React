@@ -11,9 +11,17 @@ function App() {
 
   useEffect(() => {
     const fetchHouses = async () => {
-      const response = await fetch("./houses.json");
-      const houses = await response.json();
-      setAllHouses(houses);
+      try {
+        const response = await fetch("./houses.json");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const houses = await response.json();
+        setAllHouses(houses);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        // Handle the error, e.g., show an error message to the user
+      }
     };
     fetchHouses();
   }, []);
@@ -32,15 +40,13 @@ function App() {
         <HouseFilter allHouses={allHouses} />
         <Routes>
           <Route
-            path="/SearchResults/:country"
+            path="/searchresults/:country"
             element={<SearchResults allHouses={allHouses} />}
           ></Route>
           <Route
-          path="/house/:house"
-          element={<HouseFromQuery allHouses={allHouses} />}
-          >
-
-          </Route>
+            path="/house/:house"
+            element={<HouseFromQuery allHouses={allHouses} />}
+          ></Route>
           <Route
             path="/"
             element={<FeaturedHouse house={featuredHouse} />}

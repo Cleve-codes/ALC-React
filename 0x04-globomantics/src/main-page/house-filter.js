@@ -19,7 +19,7 @@ const HouseFilter = ({ allHouses }) => {
       <div className="offset-md-2 col-md-4">
         Look for your dream house in country:
       </div>
-      <div className="col=md-4 mb-3">
+      <div className="col-md-4 mb-3">
         <select className="form-select" onChange={onSearchCountry}>
           {countries.map((c) => (
             <option key={c} value={c}>
