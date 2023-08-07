@@ -1,4 +1,4 @@
-import ImageHovered from "./ImageHovered";
+import ImageHovered from "./components/ImageHovered";
 
 function App() {
   return (
