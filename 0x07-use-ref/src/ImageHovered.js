@@ -1,9 +1,9 @@
 import React from 'react'
 import { useState } from "react";
-import bob1 from "./bob-marley-1.png";
-import bob2 from "./bob-marley-2.png";
-import bob3 from "./bob-marley-3.png";
-import bob4 from "./bob-marley-4.png";
+import bob1 from "./Images/bob-marley-1.png";
+import bob2 from "./Images/bob-marley-2.png";
+import bob3 from "./Images/bob-marley-3.png";
+import bob4 from "./Images/bob-marley-4.png";
 
 const ImageHovered = () => {
   const [hovered, setHovered] = useState(null);
