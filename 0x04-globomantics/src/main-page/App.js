@@ -47,7 +47,7 @@ function App() {
             element={<SearchResults allHouses={allHouses} />}
           ></Route>
           <Route
-            path="/house/:house"
+            path="/house/:id"
             element={<HouseFromQuery allHouses={allHouses} />}
           ></Route>
           <Route
