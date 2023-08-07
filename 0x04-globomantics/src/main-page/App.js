@@ -1,33 +1,16 @@
-import { useEffect, useState, useMemo } from "react";
+import { useMemo } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./Header";
 import HouseFilter from "./house-filter";
 import HouseFromQuery from "../House/HouseFromQuery";
 import FeaturedHouse from "./featured-house";
 import SearchResults from "../search-results/SearchResults";
+import useHouses from "../hooks/useHouses";
 
 function App() {
-  const [allHouses, setAllHouses] = useState([]);
+  const allHouses = useHouses();
 
-  useEffect(() => {
-    const fetchHouses = async () => {
-      try {
-        const response = await fetch("./houses.json");
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const houses = await response.json();
-       // console.log(houses);
-        setAllHouses(houses);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        // Handle the error, e.g., show an error message to the user
-      }
-    };
-    fetchHouses();
-  }, []);
-
- // console.log(allHouses);
+  // console.log(allHouses);
 
   const featuredHouse = useMemo(() => {
     if (allHouses.length) {

@@ -75,3 +75,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - React router.
 - Routes and navigation(useNavigate and useParams)
 - Creating deep links using react router
+- Creating and using custom hooks.
