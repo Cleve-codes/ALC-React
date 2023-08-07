@@ -73,3 +73,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 - React Hooks i.e
 - React router.
+- Routes and navigation(useNavigate)
