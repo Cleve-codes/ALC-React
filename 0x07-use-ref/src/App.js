@@ -5,29 +5,31 @@ import bob3 from "./bob-marley-3.png";
 import bob4 from "./bob-marley-4.png";
 
 function App() {
-  const [blackNwhite, setBlackNWhite] = useState(false);
+  const [hovered, setHovered] = useState(null);
 
-  const onHover = () => {
-    setBlackNWhite(!blackNwhite);
+  const onHover = (e) => {
+    setHovered(e.target.id);
   };
 
-  const onHoverOut = () => {
-    setBlackNWhite(!blackNwhite);
+  const onHoverOut = (e) => {
+    setHovered(null);
   };
 
   return (
     <div className="App">
       <img
-        src={blackNwhite ? bob1 : bob3}
+        src={hovered === "1" ? bob1 : bob3}
         alt="Bob marley"
         onMouseEnter={onHover}
         onMouseLeave={onHoverOut}
+        id="1"
       />
       <img
-        src={blackNwhite ? bob2 : bob4}
+        src={hovered === "2" ? bob2 : bob4}
         alt="Bob marley"
         onMouseEnter={onHover}
         onMouseLeave={onHoverOut}
+        id="2"
       />
     </div>
   );
