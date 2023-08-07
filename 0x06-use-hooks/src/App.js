@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./index.css";
+import { useState } from "react";
+import InputElement from "./InputElement";
 
 function App() {
+  const [inputValue, setInputValue] = useState("");
+  const [historyList, setHistoryList] = useState([]);
+
+  const onInput = (e) => {
+    setInputValue(e.target.value);
+    setHistoryList([...historyList, e.target.value]);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <InputElement inputValue={inputValue} onInput={onInput} />
+      <br></br>
+      <span>
+        {inputValue}
+        <hr />
+      </span>
+      <ul>
+        {historyList.map((item, i) => (
+          <div key={i}>{item}</div>
+        ))}
+      </ul>
     </div>
   );
 }
