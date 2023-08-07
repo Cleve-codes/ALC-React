@@ -1,6 +1,7 @@
 import React from 'react'
 import House from '../House/House';
 
+
 const FeaturedHouse = ({house}) => {
 if(house){ 
     return (
@@ -13,5 +14,7 @@ if(house){
     );
     }
 }
+
+
     
 export default FeaturedHouse;
