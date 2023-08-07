@@ -9,7 +9,7 @@ const Inquiry = () => {
   });
 
   const onChange = (e) => {
-    setContactInfo({ ...contactInfo, [e.target.id]: e.target.valu });
+    setContactInfo({ ...contactInfo, [e.target.id]: e.target.value });
   };
 
   const onSubmit = (e) => {
