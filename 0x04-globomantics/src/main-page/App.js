@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./Header";
 import HouseFilter from "./house-filter";
@@ -6,18 +5,11 @@ import HouseFromQuery from "../House/HouseFromQuery";
 import FeaturedHouse from "./featured-house";
 import SearchResults from "../search-results/SearchResults";
 import useHouses from "../hooks/useHouses";
+import useFeaturedHouse from "../hooks/useFeaturedHouse";
 
 function App() {
   const allHouses = useHouses();
-
-  // console.log(allHouses);
-
-  const featuredHouse = useMemo(() => {
-    if (allHouses.length) {
-      const randomHouse = Math.floor(Math.random() * allHouses.length);
-      return allHouses[randomHouse];
-    }
-  }, [allHouses]);
+  const featuredHouse = useFeaturedHouse(allHouses);
 
   return (
     <Router>
