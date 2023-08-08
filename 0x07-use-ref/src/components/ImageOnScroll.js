@@ -13,25 +13,31 @@ const original = [bob1, bob2, pac1, pac2];
 const blackNwhite = [bob3, bob4, pac4, pac3];
 
 const ImageOnScroll = () => {
- const ImageRef = useRef(null)
+ const imageRefs = useRef([])
 
- const isinView = () => {
-    const rect = ImageRef.current.getBoundingClientRect();
+ const isinView = (index) => {
+    const rect = imageRefs.current[index].getBoundingClientRect();
     return rect.top >= 0 && rect.bottom <= window.innerHeight;
 }
 
-const [inView, setInView] = useState(false);
+const [inView, setInView] = useState([]);
 
 useEffect(()=>{
-    window.addEventListener('scroll', scrollHandler);
-    return ()=>{
-        window.removeEventListener("scroll", scrollHandler);
-    }
+  // Initialize inView state for each image
+  setInView(original.map((_, i) => isinView(i)));
+
+  const scrollHandler = () => {
+    // Update inView state for each image
+    setInView(original.map((_, i) => isinView(i)));
+  };
+
+  window.addEventListener("scroll", scrollHandler);
+  return () => {
+    window.removeEventListener("scroll", scrollHandler);
+  };
 }, [])
 
-const scrollHandler = () => {
-    setInView(isinView())
-}
+
 
 
   return (
@@ -39,11 +45,11 @@ const scrollHandler = () => {
       {Array.from({ length: 4 }).map((_, i) => {
         return (
           <img
-            src={inView ? original[i] : blackNwhite[i]}
+            src={inView[i] ? original[i] : blackNwhite[i]}
             alt={i + 1}
             id={i + 1}
             key={i}
-            ref={ImageRef}
+            ref={(el) => (imageRefs.current[i] = el)}
           />
         );
       })}
