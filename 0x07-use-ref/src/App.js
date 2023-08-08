@@ -1,9 +1,10 @@
-import ImageHovered from "./components/ImageHovered";
+//import ImageHovered from "./components/ImageHovered";
+import ImageOnScroll from "./components/ImageOnScroll";
 
 function App() {
   return (
     <div className="App">
-      <ImageHovered />
+      <ImageOnScroll />
     </div>
   );
 }
